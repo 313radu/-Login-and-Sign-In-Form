@@ -1,0 +1,198 @@
+:root {
+    --bg-body-10: rgb(134, 155, 169);
+    --bg-body-20: rgb(106, 139, 156);
+    --bg-20: rgb(255, 255, 255);
+
+    --formWidth: 400px;
+    --formHeight: 400px;
+
+    --bg-circle: rgb(173, 216, 230);
+
+    --fs-text: 1rem;
+
+    --clr-inputText: rgb(204, 201, 201);
+
+    --clr-text: rgb(245, 245, 245);
+    --bg-button: rgb(35, 72, 97);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-image: linear-gradient(45deg, var(--bg-body-10), var(--bg-body-20));
+
+}
+
+/* Global Setup */
+
+.container-form {
+    width: var(--formWidth);
+    height: var(--formHeight);
+    border-radius: .5em;
+    transform: rotateZ(45deg);
+    overflow: hidden;
+    background-color: var(--bg-20);
+    position: relative;
+    transition: 500ms linear;
+    box-shadow: 0px 0px 20px 1px rgb(49, 125, 176);
+}
+
+.container-form button {
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    background-color: transparent;
+    color: var(--clr-inputText);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.container-form button:nth-child(1) {
+    bottom: 10px;
+    right: 0;
+    transform: rotateZ(-135deg);
+    display: none;
+
+}
+
+.container-form button:nth-child(2) {
+    left: 85%;
+    transform: rotateZ(-45deg);
+}
+
+.container-form button:hover,
+.container-form button:focus {
+    color: rgb(0, 0, 0);
+}
+
+
+.container-form .sign-up {
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(-45deg);
+    /* position: relative; */
+    position: absolute;
+    padding-top: 4em;
+    /* display: none; */
+    z-index: 50;
+}
+
+.container-form .sign-up::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: var(--bg-circle);
+    position: absolute;
+    top: 10%;
+    left: 47%;
+    transform: translate(-40%, -50%);
+    z-index: 20;
+    border-radius: 100%;
+}
+
+/* COMMON CLASS */
+
+.inputs {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+}
+
+.inputs input {
+    width: 60%;
+    border-bottom: 2px solid var(--clr-inputText);
+    font-size: calc(var(--fs-text) + .2rem);
+}
+
+.inputs input::placeholder {
+    line-height: 20px;
+    color: var(--clr-inputText);
+}
+
+.inputs input:hover,
+.inputs input:focus {
+    border-bottom: 2px solid black;
+    transition: 500ms ease-in-out;
+}
+
+.sign-up .sign-button {
+    width: 100%;
+    height: 20%;
+    background-color: var(--bg-button);
+    position: absolute;
+    bottom: -80px;
+    display: flex;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 82%;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: calc(var(--fs-text) + .3rem);
+    line-height: 20px;
+    color: var(--clr-text);
+    padding-bottom: .5em;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    color: var(--bg-circle);
+}
+
+.container-form .log-in {
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(-135deg);
+    /* display: none; */
+    opacity: 0;
+    /* position: relative; */
+    position: absolute;
+}
+
+.log-in .inputs-log {
+    padding-top: 4em;
+}
+
+.container-form .log-in::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: var(--bg-circle);
+    position: absolute;
+    top: 10%;
+    left: 47%;
+    transform: translate(-40%, -50%);
+    z-index: 20;
+    border-radius: 100%;
+}
+
+.log-in .log-button {
+    width: 100%;
+    height: 20%;
+    background-color: var(--bg-button);
+    position: absolute;
+    bottom: -80px;
+    display: flex;
+}
